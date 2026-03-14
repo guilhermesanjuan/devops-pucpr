@@ -1,15 +1,9 @@
-import random
+"""Módulo simples de Hello World."""
 
-from fastapi import FastAPI
+def hello():
+    """Retorna uma saudação."""
+    return "Hello World"
 
-app = FastAPI()
-
-@app.get("/")
-def read_root():
-    """Retorna uma mensagem de boas-vindas."""
-    return {"Hello": "World", "Random_Number": random.randint(1, 100)}
-
-@app.get("/status")
-def get_status():
-    """Retorna o status da API."""
-    return {"status": "ok"}
+if __name__ == "__main__":
+    print(hello())
+    
