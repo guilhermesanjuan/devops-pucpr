@@ -1,7 +1,7 @@
-name: Continuous Integration - Workflow
+name: Continuous Deployment
 
 on:
-  push_request:
+  push:
     branches:
       - main
 
@@ -20,18 +20,16 @@ jobs:
           
       - name: Install dependencies
         run: |
-          pip install pylint fastapi
-        run: |
           python -m pip install --upgrade pip
-          pip install pylint
+          pip install pylint fastapi
           
       - name: Run Pylint
         run: pylint **/*.py
 
       - name: Simulando Continuous Delivery
-        uses: actions/upload-artifact*v4
+        uses: actions/upload-artifact@v4
         with:
-        name: projeto.zip
-        path: | 
-          '**.py'
-          README.md
+          name: projeto-zip
+          path: | 
+            main.py
+            README.md
