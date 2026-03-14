@@ -1,12 +1,12 @@
-name: Continuous Integration
+name: Continuous Deployment
 
 on:
-  pull_request:
+  push:
     branches:
       - main
 
 jobs:
-  build:
+  deliver:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
@@ -24,3 +24,11 @@ jobs:
           
       - name: Run Pylint
         run: pylint **/*.py
+
+      - name: Simulando Continuous Delivery
+        uses: actions/upload-artifact@v4 # Corrigido o @v4
+        with:
+          name: projeto-zip # Corrigida a indentação
+          path: | 
+            main.py
+            README.md
