@@ -1,12 +1,15 @@
-from fastapi import FastAPI
-import random
+import random 
+
+from fastapi import FastAPI 
 
 app = FastAPI()
 
 @app.get("/")
-async def root():
-    return {"message": "Hello World!"}
+def read_root():
+    """Retorna uma mensagem de boas-vindas."""
+    return {"Hello": "World", "Random_Number": random.randint(1, 100)}
 
-@app.get("/teste1")
-async def funcaoteste():
-    return {"teste": True, "num_aleatorio": random.randint(0, 1000)}
+@app.get("/status")
+def get_status():
+    """Retorna o status da API."""
+    return {"status": "ok"}
