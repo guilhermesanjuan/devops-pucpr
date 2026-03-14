@@ -1,4 +1,3 @@
-"""Módulo de API para a matéria de DevOps."""
 import random
 
 from fastapi import FastAPI
