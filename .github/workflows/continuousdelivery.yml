@@ -8,6 +8,7 @@ on:
 jobs:
   deliver:
     runs-on: ubuntu-latest
+    
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
@@ -26,9 +27,9 @@ jobs:
         run: pylint **/*.py
 
       - name: Simulando Continuous Delivery
-        uses: actions/upload-artifact@v4 # Corrigido o @v4
+        uses: actions/upload-artifact@v4
         with:
-          name: projeto-zip # Corrigida a indentação
+          name: projeto-zip
           path: | 
             main.py
             README.md
