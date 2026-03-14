@@ -1,6 +1,9 @@
-import random 
+"""
+Módulo de API para a matéria de DevOps.
+"""
+import random
 
-from fastapi import FastAPI 
+from fastapi import FastAPI
 
 app = FastAPI()
 
