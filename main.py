@@ -1,7 +1,7 @@
 """Módulo simples de Hello World."""
 
 def hello():
-    """Retorna uma saudação."""
+    """Retorna uma saudação!."""
     return "Hello World"
 
 if __name__ == "__main__":
