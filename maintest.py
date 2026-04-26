@@ -31,3 +31,4 @@ def test_is_even_false():
 def test_reverse_string():
     """Testa se a string é invertida corretamente."""
     assert reverse_string("abc") == "cba"
+    
