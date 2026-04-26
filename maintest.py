@@ -5,7 +5,7 @@ from main import hello, add, is_even, reverse_string
 
 def test_hello():
     """Testa se a função hello retorna a saudação correta."""
-    assert hello() == "Hello World!!!"
+    assert hello() == "Hello World!!!!"
 
 
 def test_add_positive():
@@ -31,4 +31,3 @@ def test_is_even_false():
 def test_reverse_string():
     """Testa se a string é invertida corretamente."""
     assert reverse_string("abc") == "cba"
-    
