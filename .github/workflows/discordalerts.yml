@@ -1,10 +1,10 @@
 name: Discord Alerts
- 
+
 on:
   push:
     branches:
       - main
- 
+
 jobs:
   notify:
     runs-on: ubuntu-latest
@@ -13,7 +13,7 @@ jobs:
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         run: |
+          MESSAGE="Novo push na branch main por ${{ github.actor }}. Repositorio: ${{ github.repository }}."
           curl -H "Content-Type: application/json" \
-            -d "{\"content\": \"Novo push na branch main por ${{ github.actor }}.\nRepositório: ${{ github.repository }}\nCommit: ${{ github.event.head_commit.message }}\"}" \
+            -d "{\"content\": \"$MESSAGE\"}" \
             $DISCORD_WEBHOOK
- 
